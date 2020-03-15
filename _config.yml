@@ -1,6 +1,7 @@
 # Site settings
-title: Hanuman
-description: Hanuman is a minimal yet powerful Jekyll theme for your blogs and websites.
+title: Hyona's Blog
+description: 코딩 공부 개인 블로그
+email : gysk0507@gmail.com
 cover: assets/images/radhakrishna.jpg
 logo: assets/images/logo.png
 favicon: assets/images/favicon.png
