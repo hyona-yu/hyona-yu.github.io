@@ -1,6 +1,6 @@
 # Site settings 配置站点
 title: 'Hyona's Blog'
-description: '개인 코딩 공부 블로그'
+description: 'Personal Coding Blog'
 keywords: 'AI, Reinforcement Learning'
 url: 'https://hyona-yu.github.io' # your host
 
