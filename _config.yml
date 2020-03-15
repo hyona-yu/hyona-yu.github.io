@@ -1,67 +1,90 @@
-# Site settings
-title: Hyona's Blog
-description: 코딩 공부 개인 블로그
-email : gysk0507@gmail.com
-cover: assets/images/face1.jpg
-logo: assets/images/face1.jpg
-favicon: assets/images/face1.jpg
-baseurl: "" # the subpath of your site, e.g. /blog/ or / for root
-url: "https://hyona-yu.github.io/" # the base hostname & protocol for your site
+# Site settings 配置站点
+title: 'Hyona's Blog'
+description: '개인 코딩 공부 블로그'
+keywords: 'AI, Reinforcement Learning'
+url: 'https://hyona-yu.github.io' # your host
 
-pagination:
+# nav 中文字符空格：&emsp;
+nav: # 最佳体验 六个标签 且最好每个标签不超过4中文字
+  首页: '/'
+  标签: '/tags.html'
+  时间线: '/timeline.html'
+  关于博主: '/about.html'
+  友情链接: '/friendLink.html'
 
-  # Site-wide kill switch, disabled here it doesn't run at all
-  enabled: true
+# 博主
+author: true
+name: 'your awesome name'
+NickName: 'your awesome nickname'
+webtitle: 'HN's Coding Blog'
+bio: 'your awesome bio'
+about: true
+aboutyou: 'Sejong Univ Undergraduate Student'
+portraits: '/assets/main1.jpeg' # your portraits image file path
 
-  # Set to 'true' to enable pagination debugging. This can be enabled in the site config or only for individual pagination pages
-  debug: false
+# SNS
+SNS: true
+SNS-icon: #['Facebook', 'weibo', 'qq', 'github', 'Dribbble', 'Twitter', 'instagram', 'weixin', 'Codepen']
+  mail: 'gysk0507@gmail.com'
+  weixin: '' # 你的微信二维码存放的地址
+  qq: '' # 你的qq二维码存放的地址 or http://wpa.qq.com/msgrd?v=3&uin='你的QQ号'&site=qq&menu=yes
+  github: ''
+  Codepen: ''
+  weibo: ''
+  instagram: ''
+  Twitter: ''
+  Dribbble: ''
+  Facebook: ''
+  Google: ''
+  zhihu: ''
+  juejin: ''
+  twitch: ''
 
-  per_page: 5
+# 分页
+paginate: 2
+paginatepath: ['page:num']
 
-# Social
-facebook: facebook
-twitter: twitter
-github:  github
+# since
+footer:
+  since: 2020
 
-#Additional Pages
-about: about
-contact: contact
-privacy-policy: privacy-policy
-
-
-permalink: /:title
-
-
-# Google Analytics
-analytics_id: ""
-
-# Build settings
+# Markdown
 markdown: kramdown
-
 kramdown:
-  parse_block_html: true
+  input: GFM
+# 代码高亮 使用rouge
+highlighter: rouge
+# 代码高亮主题使用pygments主题: autumn\ default\ emacs\ friendly\ manni\ murphy\ pastie\ perldoc\ tango 任选一个你喜欢的主题名称填在下面的单引号中
+pygmentsTheme: 'default'
 
-plugins:
-  - jekyll-paginate-v2
+# 友情链接
+friends:
+  jekyll: 'https://www.jekyll.com.cn/'
 
+# 评论 最佳体验 在disqus、livere和Gitment之间三选一
+# disqus 评论
+disqus: false
+disqus_url: '' # https://abc.disqus.com/embed.js
+# 来必力评论
+livere: true
+livere_uid: 'MTAyMC8zNDI2OS8xMDgwNg==' # MTAyMC8zNDI2OS8xMDgwNg==
+# Gitment评论 OAuth Application
+Gitment: false
+Gitment_owner: ''  # github用户名
+Gitment_repo: ''  # github博客存放的仓库名
+client_id: ''  # 注册 OAuth Application 后获得的 client_id
+client_secret: ''  # 注册 OAuth Application 后获得的 client_secret
 
-# Settings for rake task
-safe: False
-lsi: False
-username: hyona yu #github username
-repo: hyona-yu.github #github repository
-branch: master #branch
-#relative_source: ../hanuman/ #source directory
-#destination: ../hanuman-pages/ #destination directory
-#production_url:  https://samanyougarg.com/
-source_url:  https://github.com/samanyougarg/hanuman #source repository url
+# Share : weibo, qq, wechat, tencent, douban, qzone, linkedin, diandian, facebook, twitter, google
+social-share: false
+social-share-items: ['qq', 'wechat', 'weibo', 'twitter', 'facebook']
 
-exclude:
-  - README.md
-  - Rakefile
-  - Gemfile
-  - Gemfile.lock
-  - changelog.md
-  - "*.Rmd"
-  - vendor
-  - .travis.yml
+# 百度统计 在baidu-url里填写自己相关的url代码
+baidu: true
+baidu-url: ''
+# 谷歌分析 在google-ID里填写自己在谷歌分析获得的追踪ID
+google: false
+google-ID: ''
+
+# 博客头信息备选颜色（该部分在站点中不充当站点变量，将其写在post的头信息中用来充当页面变量）
+color: rgb(154,133,255) rgb(255,90,90) rgb(255,210,32) rgb(98,170,255)
