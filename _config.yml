@@ -3,8 +3,8 @@ title: Hyona's Blog
 description: 코딩 공부 개인 블로그
 email : gysk0507@gmail.com
 cover: assets/images/face1.jpg
-#logo: assets/images/logo.png
-#favicon: assets/images/favicon.png
+logo: assets/images/face1.jpg
+favicon: assets/images/face1.jpg
 baseurl: "" # the subpath of your site, e.g. /blog/ or / for root
 url: "https://hyona-yu.github.io/" # the base hostname & protocol for your site
 
