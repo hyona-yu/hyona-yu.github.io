@@ -4,9 +4,9 @@
 # which you are expected to set up once and rarely need to edit after that.
 # For technical reasons, this file is *NOT* reloaded automatically when you use
 # 'jekyll serve'. If you change this file, please restart the server process.
-#FOR MOE INFOS, CHECK OUT THE   - organisers.yml file 
+#FOR MOE INFOS, CHECK OUT THE   - organisers.yml file
 # Site settings
-title: Glas 
+title: Glas
 #What is the name of the events or talks you would like to host? (Example Brownbags, Talks, Lighting Talks)
 event_label: Events
 
@@ -14,10 +14,10 @@ description: > # "
   your description.....
 
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://spaceg.github.io" # the base hostname & protocol for your site
+url: "http://hyona-yu.github.io" # the base hostname & protocol for your site
 
 #These settings might be able to go?
-author: Lucas Gatsas @ spacedig.ch 
+author: Lucas Gatsas @ spacedig.ch
 twitter_username: yourtwitter
 github_username:  yourgithub
 company_name: yourname
@@ -32,5 +32,3 @@ permalink: /event/:title.html
 
 #change your port on localhost
 port: 8000
-
-
