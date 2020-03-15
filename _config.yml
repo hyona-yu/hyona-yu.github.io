@@ -6,11 +6,11 @@ url: 'https://hyona-yu.github.io' # your host
 
 # nav 中文字符空格：&emsp;
 nav: # 最佳体验 六个标签 且最好每个标签不超过4中文字
-  首页: '/'
-  标签: '/tags.html'
-  时间线: '/timeline.html'
-  关于博主: '/about.html'
-  友情链接: '/friendLink.html'
+  umm: '/'
+  tag: '/tags.html'
+  timeline: '/timeline.html'
+  about: '/about.html'
+  link: '/friendLink.html'
 
 # 博主
 author: true
@@ -20,7 +20,7 @@ webtitle: 'your awesome webtitle'
 bio: 'your awesome bio'
 about: true
 aboutyou: 'your introduction'
-portraits: '/assets/profile.jpeg' # your portraits image file path
+portraits: '/assets/mian1.jpeg' # your portraits image file path
 
 # SNS
 SNS: true
