@@ -1,10 +1,11 @@
-# Site settings
-title: Hyona Blog
-description: 'Personal Coding Blog'
-keywords: 'AI, Reinforcement Learning'
-url: 'https://hyona-yu.github.io' # your host
+# Site settings 配置站点
+title: 'your awesome title'
+description: 'your web description'
+keywords: 'your web keywords, another keywords'
+url: 'https://abc.github.io' # your host
 
-nav: #
+# nav 中文字符空格：&emsp;
+nav: # 最佳体验 六个标签 且最好每个标签不超过4中文字
   首页: '/'
   标签: '/tags.html'
   时间线: '/timeline.html'
@@ -15,16 +16,16 @@ nav: #
 author: true
 name: 'your awesome name'
 NickName: 'your awesome nickname'
-webtitle: 'HN's Coding Blog'
+webtitle: 'your awesome webtitle'
 bio: 'your awesome bio'
 about: true
-aboutyou: 'Sejong Univ Undergraduate Student'
-portraits: '/assets/main1.jpeg' # your portraits image file path
+aboutyou: 'your introduction'
+portraits: '/assets/profile.jpeg' # your portraits image file path
 
 # SNS
 SNS: true
 SNS-icon: #['Facebook', 'weibo', 'qq', 'github', 'Dribbble', 'Twitter', 'instagram', 'weixin', 'Codepen']
-  mail: 'gysk0507@gmail.com'
+  mail: 'mailto:abc@gmail.com'
   weixin: '' # 你的微信二维码存放的地址
   qq: '' # 你的qq二维码存放的地址 or http://wpa.qq.com/msgrd?v=3&uin='你的QQ号'&site=qq&menu=yes
   github: ''
@@ -45,7 +46,7 @@ paginatepath: ['page:num']
 
 # since
 footer:
-  since: 2020
+  since: 2018
 
 # Markdown
 markdown: kramdown
@@ -75,7 +76,7 @@ client_id: ''  # 注册 OAuth Application 后获得的 client_id
 client_secret: ''  # 注册 OAuth Application 后获得的 client_secret
 
 # Share : weibo, qq, wechat, tencent, douban, qzone, linkedin, diandian, facebook, twitter, google
-social-share: false
+social-share: true
 social-share-items: ['qq', 'wechat', 'weibo', 'twitter', 'facebook']
 
 # 百度统计 在baidu-url里填写自己相关的url代码
@@ -87,4 +88,3 @@ google-ID: ''
 
 # 博客头信息备选颜色（该部分在站点中不充当站点变量，将其写在post的头信息中用来充当页面变量）
 color: rgb(154,133,255) rgb(255,90,90) rgb(255,210,32) rgb(98,170,255)
-encoding : UTF-8
