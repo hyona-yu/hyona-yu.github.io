@@ -1,70 +1,118 @@
-<!-- 博文的布局-Layout -->
-<!DOCTYPE html>
-<html>
-<head>
-<!-- 引入head标签 -->
-{% include head.html %}
-{% include androidColor.html %}
-</head>
-<body>
+---
+layout: default
+---
 
-<!-- 顶部锚点 -->
-<a id="htmlup" name="htmlup"></a>
-<!-- 引入博文顶部选项 -->
-{% include post-header.html %}
-<!-- 引入移动下拉选项 -->
-{% include boot.html %}
-<!-- 引入博文顶部样式 -->
-{% include post-title.html %}
-<div class="markdown-body fadeInUp animated">
 
-  {% if page.subtitle %}
-    {% if page.color.size==0 or page.color==nil %}
-      <div class="postpage-subtitle" style="border-left: 8px solid #9A85FF; border-right: 8px solid #9A85FF;">
-        {{ page.subtitle }}
-      </div>
-    {% else %}
-      <div class="postpage-subtitle" style="border-left: 8px solid {{ page.color }}; border-right: 8px solid {{ page.color }}">
-        {{ page.subtitle }}
-      </div>
-    {% endif %}
-  {% endif %}
 
-  <!-- 文章内容 -->
-  {{ page.content }}
-  <!-- 引入share模块 -->
-  {% include share.html %}
-</div>
+{% assign organiser = site.data.organisers[page.organiser] %}
 
-<!-- 底部锚点 -->
-<a id="htmldown" name="htmldown"></a>
-<!-- 引入评论模块 -->
-{% include comment.html %}
-<!-- 引入goto模块 -->
-{% include goto.html %}
-<!-- 引入页面底部模块 -->
-{% include footer.html %}
 
-<!-- 引用wow.js的动画效果 -->
-<script src="/assets/js/wow.js"></script>
-<script>
-    var wow = new WOW({
-        boxClass: 'wow',
-        animateClass: 'animated',
-        // offset: 600,
-        mobile: true,
-        live: true
-    });
-    wow.init();
-</script>
-<!-- 页面刷新回到顶部 -->
-<script>
-    window.onbeforeunload = function(){
-        //刷新后页面自动回到顶部
-        document.documentElement.scrollTop = 0;  //ie下
-        document.body.scrollTop = 0;  //非ie
-    }
-</script>
-<script src="/assets/js/main.js"></script>
-</body>
-</html>
+<!--
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header"> 
+    <h2 class="post-date"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%B %-d, %Y" }}</time>{% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}</h2>
+    <h3 class="post-time">From {{ page.start_time}} to {{page.end_time }}</h3>
+  </header>
+</article> --> 
+        
+
+
+        <article class="post tag-space space-science" itemscope itemtype="http://schema.org/BlogPosting">            
+            <header class="cover post-header">
+                <div class="post-bg" style="background-image:url({{ site.baseurl }}/{{ page.cover }});"></div>
+                <div class="cover-content">
+                    <div class="inner">
+                        <h1 class="post-title">{{ page.title }}</h1>
+                        <div class="post-meta">
+                            by <span class="post-author"><a href="{{ site.baseurl }}/about" itemscope itemtype="http://schema.org/Person">  {{organiser.name}}</a></span> on <time class="published" datetime="2015-10-05" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished" >{{ page.date | date: "%b %-d, %Y" }}</time> <span class="reading-time"> <span class="eta"></span></span>
+                        </div><!-- .post-meta -->
+                        <a href="#" class="scroll-down square light icon-chevron-down"><span class="screen-reader-text">Scroll Down</span></a>
+                    </div><!-- .inner -->
+                </div><!-- .cover-content -->
+            </header><!-- .cover -->
+            <div class="post-content inner">
+                <p></p>
+                <p>{{ content }}</p>
+                <div id="disqus_thread"></div>
+                <script>
+                    /**
+                     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+                     */
+                    /*
+                    var disqus_config = function () {
+                        this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+                        this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                    };
+                    */
+                    (function() {  // DON'T EDIT BELOW THIS LINE
+                        var d = document, s = d.createElement('script');
+                        
+                        s.src = '//lucasgatsas.disqus.com/embed.js';
+                        
+                        s.setAttribute('data-timestamp', +new Date());
+                        (d.head || d.body).appendChild(s);
+                    })();
+                </script>
+                <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+                </noscript>
+
+
+
+        <div>
+            <a href='mailto:{{organiser.email}}?subject=Register interest for {{page.title}} on {{ page.date | date: "%B %-d, %Y" }}&body=Hi! Im interested in your Work. Can we Meet?' class="button button-primary">Contact</a>
+        </div>
+
+            </div><!-- .post-content -->
+            <footer class="post-footer inner">
+                <div class="share-post">
+                    <span>Share</span>
+                    <a class="icon-twitter square" target="_blank" href="http://twitter.com/share?text={{ post.url | prepend: site.baseurl }}&url="><span class="screen-reader-text">Twitter</span></a>
+                    <a class="icon-facebook square" target="_blank" href="http://wwww.facebook.com/sharer.php?"><span class="screen-reader-text">Facebook</span></a>
+                    <a class="icon-google square" target="_blank" href="http://plus.google.com/share?url=/"><span class="screen-reader-text">Google+</span></a>
+                </div>
+                <div class="author-box">
+                        {% if organiser.photo %}
+                            <img src="{{organiser.photo}}" alt="Jane Doe" class="author-avatar" />
+                        {% endif %}
+                            {% if organiser.photo %}
+                    <h4 class="author-title">About 
+                        <a href=""> {{organiser.name}}</a>
+                    </h4>
+                     {% endif %}
+                    <p class="author-description">{{ site.description }}</p>
+                    <p class="author-links">
+                        <span class="author-location">
+                        <i class="icon-map-marker" aria-hidden="true"></i> 
+                        {{organiser.country}}
+                        </span>
+                            <span class="author-website">
+                            <i class="icon-chain" aria-hidden="true"></i> 
+                            <a href="{{ organiser.web }}" target="_blank">{{ organiser.web }}</a>
+                        </span> 
+                              <span class="author-website">
+                              <i class="icon-chain" aria-hidden="true"></i> 
+                              <a href="mailto:{{ organiser.email }}" target="_blank">{{ organiser.email }}</a>
+                        </span> 
+                        
+                    </p>
+                </div>   
+                   <ul class="pager">
+                    {% if page.previous.url %}
+                    <li class="previous">
+                        <a href="{{ page.previous.url | prepend: site.baseurl | replace: '//', '/' }}" data-toggle="tooltip" data-placement="top" title="{{page.previous.title}}" id="pagehove">&larr; Previous Post</a>
+                    </li>
+                    {% endif %}
+                    {% if page.next.url %}
+                    <li class="next">
+                        <a href="{{ page.next.url | prepend: site.baseurl | replace: '//', '/' }}" data-toggle="tooltip" data-placement="top" title="{{page.next.title}}" id="pagehove">Next Post &rarr;</a>
+                    </li>
+                    {% endif %}
+                </ul>
+               
+            </footer><!-- .post-footer -->
+
+        </article><!-- .post -->
+
+
+             

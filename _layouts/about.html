@@ -1,0 +1,76 @@
+---
+organiser: "Lucas Gatsas"
+
+---
+{% assign organiser = site.data.organisers[page.organiser] %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Your Blog Name </title>
+	<meta name="description" content="" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<link href="http://fonts.googleapis.com/css?family=Droid+Serif:400,400italic,700,700italic%7CMontserrat:400,700" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" type="text/css" href="../../assets/css/style-v=cba79c2df0.css" />
+
+
+
+	<!--[if lt IE 9]>
+	<script src="../../assets/js/html5-v=cba79c2df0.js"></script>
+	<![endif]-->
+
+
+<style>
+
+@media only screen and (min-width: 1400px){
+.grid-item, .home-template .grid-item:nth-child(3n+1), .cover.page-header-1 {
+    height: 500px;
+    height: 450px;
+    width: 100%;
+}
+}
+</style>
+</head>
+<body class="author-template author-jane-doe">
+	<div id="page" class="site">
+    {% include header.html %}
+<main class="site-main" role="main">
+	<section class="site-content">
+	
+		<header class="cover page-header-1">
+			<div class="cover-bg" style="background-image: url('http://bintel.net/wp-content/uploads/2014/09/blur-background-1680x1050-spectrum-electromagnetic-4k-901-1.jpg?id=1080')"></div>
+			<div class="cover-content">
+				<div class="inner">
+					<div class="post-count"></div>
+					<h1 class="page-title">{{ site.title }} </h1>
+
+				
+					<p>    
+                            <img src="http://127.0.0.1:8000/assets/img/avatar@2x.png" alt="Jane Doe" class="author-avatar" />
+                        </p>
+					<p class="page-description">Your Text about your and so on!</p>
+					<p class="author-links">
+						<span class="author-location"><i class="icon-map-marker" aria-hidden="true"></i> St. Gallen, Switzerland</span>
+						<span class="author-website"><i class="icon-chain" aria-hidden="true"></i> <a href="http://www.lucasgatsas.ch" target="_blank">http://www.lucasgatsas.ch</a></span>
+					</p>
+				</div><!-- .inner -->
+			</div><!-- .cover-content -->
+		</header><!-- .cover -->
+
+		<div class="inner-wide">
+			<div class="post-grid">
+
+</div><!-- .post-grid -->
+
+
+		</div><!-- .inner-wide -->
+
+	</section><!-- .site-content -->
+</main><!-- .site-main -->
+
+
+
+    {% include footer.html %}

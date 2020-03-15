@@ -1,19 +1,66 @@
-<header id="index-header">
-  <div class="top-center">
-      <div class="logo">
-          <a href="{{ "/" | relative_url }}" title="my awesome webtitle">{{ site.webtitle }}</a>
-      </div>
-      <nav class="top-nav">
-          <ul>
-              {% for i in site.nav %}
-                <li><a href="{{ i[1] }}">{{ i[0] }}</a></li>
-              {% endfor %}
-          </ul>
-      </nav>
-      <div id="top-boot">
-        <a href="javascript:;" id="boot1" style="display:block;" onclick="document.getElementById('boot-area').style.display='block';document.getElementById('boot1').style.display='none';document.getElementById('boot2').style.display='block';"><img src="/assets/boot.png" alt=""></a>
-        <a href="javascript:;" id="boot2" style="display: none;" onclick="document.getElementById('boot-area').style.display='none';document.getElementById('boot1').style.display='block';document.getElementById('boot2').style.display='none';"><img src="/assets/boot.png" alt=""></a>
-      </div>
-  </div>
 
-</header>
+{% assign organiser = site.data.organisers.[page.organiser] %}
+
+<header class="site-header">
+    <div class="inner-wide">
+        <h1 class="site-title"><a href="{{ site.baseurl }}/" id="glas-logo-1">    <img src="{{ site.baseurl }}/img/glas-logo.png" style="width:100%" alt="image"></a><!--{{ site.title }}--></a></h1>
+        <nav class="site-navigation" role="navigation">
+    <h2 class="screen-reader-text">hello</h2>
+    <ul class="menu">
+        <li class="menu-item home current-menu-item" role="presentation"><a href="/">Home</a></li>
+         {% for my_page in site.pages %}
+          {% if my_page.navigation_title %}
+            {% if my_page.button %}
+            {% else %}
+                <a class="page-link" href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.navigation_title }}</a>
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+    </ul><!-- .menu -->
+</nav><!-- .site-navigation -->
+
+        <a class="sidebar-toggle"><span class="screen-reader-text">Open Sidebar</span><span class="icon" aria-hidden="true"></span></a>
+    </div><!-- .inner-wide -->
+</header><!-- .site-header -->
+        
+
+<div class="sidebar">
+    <div class="sidebar-scrollable">
+        <div class="widget-area">
+                <nav class="site-navigation" role="navigation">
+    <ul class="menu">
+ 
+    </ul><!-- .menu -->
+</nav><!-- .site-navigation -->
+
+            <aside class="widget widget-text">
+                <h2 class="widget-title">{{ organiser.descsidebartitle }}</h2>
+                <p>{{ organiser.descsidebartext }}</p>
+            </aside><!-- .widget -->
+            <aside class="widget widget-newsletter">
+                <h2 class="widget-title">My  Newsletter</h2>
+                <p>{{ organiser.sidebarnewsletter }}</p>
+                <!-- Begin MailChimp Signup Form -->
+                <div id="mc_embed_signup">
+                    <form action="" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                        <div id="mc_embed_signup_scroll">
+                            <label for="mce-EMAIL" class="screen-reader-text">Email Address</label>
+                            <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+                            <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+                        </div>
+                    </form>
+                </div>
+                <!--End mc_embed_signup-->
+            </aside><!-- .widget -->
+            <aside class="widget widget-text">
+                <h2 class="widget-title">Contact</h2>
+                <p>{{ organiser.descsidebartext2 }}</p>
+                <ul class="contacts">
+                    <li><span class="icon icon-envelope" aria-hidden="true"></span> {{ organiser.sidebaremail }}</li>
+                    <li><span class="icon icon-map-marker" aria-hidden="true"></span> {{ organiser.sidebarcountry }}</li>
+                </ul>
+            </aside><!-- .widget -->
+        </div><!-- .widget-area -->
+        <a class="sidebar-toggle"><span class="screen-reader-text">Close Sidebar</span><span class="icon" aria-hidden="true"></span></a>
+    </div><!-- .sidebar-scrollable -->
+</div><!-- .sidebar -->
