@@ -5,7 +5,7 @@ cover: assets/images/radhakrishna.jpg
 logo: assets/images/logo.png
 favicon: assets/images/favicon.png
 baseurl: "" # the subpath of your site, e.g. /blog/ or / for root
-url: "https://hyona-yu.github.io" # the base hostname & protocol for your site
+url: "https://hyona-yu.github.io/" # the base hostname & protocol for your site
 
 pagination:
 
