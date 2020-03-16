@@ -1,12 +1,12 @@
 Lucas Gatsas:
     name: Hyona Yu
     email: "gysk0507@gmail.com"
-    photo: "http://127.0.0.1:8000/assets/img/main1.jpg"
+    photo: "../assets/img/main1.jpg"
     country: South Korea
     web: hyona-yu.github.io
-    descsidebartitle: This is my Developer Blog New.
-    descsidebartext: you can modify this sidebar in the organisers.yml file.
-    sidebarnewsletter: you can modify this sidebar in the organisers.yml file.
-    descsidebartext2: Hello, Here some Text Already, you can modify this sidebar in the organisers.yml file!
+    descsidebartitle: Coding Study Blog
+    descsidebartext: Sejong Univ. Undergraduate.
+    sidebarnewsletter: Coding Study Blog
+    descsidebartext2: 2018~ .MINES LAB
     sidebaremail: "gysk0507@gmail.com"
     sidebarcountry: South Korea
