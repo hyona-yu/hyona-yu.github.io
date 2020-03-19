@@ -5,6 +5,3 @@ title: Archive Page
 permalink: /archive/
 organiser: "Lucas Gatsas"
 ---
-
-
-

@@ -17,7 +17,7 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://hyona-yu.github.io" # the base hostname & protocol for your site
 
 #These settings might be able to go?
-author: Lucas Gatsas @ spacedig.ch
+author: Hyona
 twitter_username: yourtwitter
 github_username:  yourgithub
 company_name: yourname
