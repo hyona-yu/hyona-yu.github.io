@@ -1,9 +1,6 @@
 ---
 layout: about
 navigation_title: About
-title: About Glas
+title: Hyona Yu
 permalink: /about/
 ---
-
-
-
