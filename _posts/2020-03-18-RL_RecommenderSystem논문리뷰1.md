@@ -1,11 +1,11 @@
 ---
 layout: post
-title: 'RL Recommender System 논문 리뷰 1'
+title: '[Paper]RL Recommender System 논문 리뷰 1'
 date: 2020-03-19
-author: Jekyll
+author: hyona
 color: rgb(255,210,32)
 cover: 'http://on2171g4d.bkt.clouddn.com/jekyll-banner.png'
-tags: jekyll
+tags: recommendation system paper, paper review, deep learning
 ---
 
 > 강화학습을 이용한 추천 시스템 논문을 탐구해보자
