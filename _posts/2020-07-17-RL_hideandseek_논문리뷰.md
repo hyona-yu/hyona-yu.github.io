@@ -24,7 +24,7 @@ Multi Agent에 확 끌리게 해준 OpenAI 논문. Hider와 Seeker가 숨바꼭�
 #### Policy Optimization
 PPO(proximal policy optimization)와 GAE(generalized advantage estimation), 그리고 rapid라는 RL 프레임워클르 사용했다. Policy는 policy network(이친구가 actor역할을 하는 듯)와 critic network로 이루어져 있다.   
 Agent들이 같은 policy parameter를 공유하고 있으나, 관찰은 독립적으로 진행한다. 참고로 agent별로 파라미터를 공유하지 않을 경우 sample efficiency가 감소하는 경향을 보였다.
-![algorithm](../img/hideandseek1.png)
+![algorithm](/img/hideandseek1.png)
 위 그림을 보면 object와 agent들의 position 그리고 시야각이 input으로 들어감을 알 수 있다. 또한 agent들의 상호작용이 환경을 변화시키는데(박스 위치를 옮기거나 lock을 거는 등), self-attention based policy architecture를 사용함을 알 수 있다. 앞에서 언급한 6가지의 strategy를 통해 얼마나 많은 각각의 object들이 lock되었나를 관찰하면, 환경이 변화함에 있어서 다루는 tool이 달라짐을 볼 수 있다. Appendix B를 보면 더 자세히 알 수 있는데, policy들이 에이전트 간 공유되고 있고, PPO의 특징인 clip과  TD(시간차 기법)을 활용한 GAE 알고리즘을 확인할 수 있다.   
 
 
@@ -40,8 +40,3 @@ Appendix D에서 자세히 기술했는데, Sequential Lock task로만 비교 �
 
 <hr>
 결국 multi-agent autocurricula가 물리적인 기반를 두고, 인간과 연관된 행동을 이끄는 것을 알 수 있다. ppo가 답인가..!
-
-
-
-
- 
