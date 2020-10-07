@@ -89,5 +89,5 @@ objective function은 아래를 쓴다. reward가 커져야 하므로 J를 maxim
 1. RAM은 image size에 관계 없이 독자적으로 수행할 수 있다.
 2. 망막과 같이 센터와 주변을 살펴보므로 clutter(ex. noise)를 무시할 수 있다.
 
-###[3] [MULTIPLE OBJECT RECOGNITION WITH VISUAL ATTENTION](https://arxiv.org/abs/1412.7755)
+### 3. [MULTIPLE OBJECT RECOGNITION WITH VISUAL ATTENTION](https://arxiv.org/abs/1412.7755)
 이 또한 deep mind에서 나온 논문으로, DRAM(Deep Recurrent Attention Model)을 사용했다. location을 찾는 것에서 한 술 더 떠 multi label을 찾는 것까지 갔다. 한 이미지 내 다중 label을 찾는 것이 목적.
