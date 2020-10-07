@@ -16,14 +16,16 @@ Multi Agent에 확 끌리게 해준 OpenAI 논문. Hider와 Seeker가 숨바꼭�
 
 #### Introduction
 'Human-relevant', 이 키워드들을 생각하고 논문을 보면 도움이 될듯 하다. 본 실험에서는 총 6가지의 emergence stage가 있다. 'Running and Chasing', 'Fort Building', 'Ramp Use', 'Ramp Defense', 'Box Surfing', 그리고 'Surf Defense'다. 이 새로운 변화가 생길 때 agent들은 적응하기 위해 새로운 압박을 받는다. Environment가 변하고 open-ended(열린 결말)을 맺으수록 관찰을 통한 평가는 어려워진다. 그러므로 본문에서는 targeted intelligence test를 제안하고, 이를 통해 agent들이 학습한다.   
-본 논문의 Contribution들은 다음과 같다. 1) multi-agent self-play가 autocurricula를 도출할 수 있다. 2) 물리적 environment(환경)에서 multi-agent autocurricula가 도구를 사용하는 등의 인간과 연관된(human-relevent) 기술을 도출할 수 있다. 3)  open-ended 환경에서 agent들을 test할 수 있다. 4) 이 코드를 오픈소스로 공개했다![github](github.com/openai/multi-agent-emergence-environments.)
+본 논문의 Contribution들은 다음과 같다. 1) multi-agent self-play가 autocurricula를 도출할 수 있다. 2) 물리적 environment(환경)에서 multi-agent autocurricula가 도구를 사용하는 등의 인간과 연관된(human-relevent) 기술을 도출할 수 있다. 3)  open-ended 환경에서 agent들을 test할 수 있다. 4) 이 코드를 오픈소스로 공개했다   
+![github](https://github.com/openai/multi-agent-emergence-environments.)
 
 #### Hide And Seek
 말 그대로 숨바꼭질이다. hider는 seeker가 시야각(135도)에 들어오도록, seeker는 hider의 시야각을 피하도록 task를 받는다. 환경에는 무작위로 움직일 수 없는 방이 생성되어 agent들이 탐험할 수 있다. seeker 찾기 전에 preparation phase가 주어져서, 이 시간을 hider들이 활용할 수 있다. Reward는 team-based로만 받는다. 시야각에 들어오면 1 또는 -1을 각각 받는다. 학습을 위해 너무 멀리가면 agent에게 -10의 reward를 부여한다. 환경 엔진으로는 MUJOCO를 사용했다. hider와 seeker는 각각 1~3명으로 진행을 하며, 이 agent들은 object(ex.ramp)를 이용할 수 있다. Action은 move, grab, lock로 총 3가지가 있다.   
 
 #### Policy Optimization
 PPO(proximal policy optimization)와 GAE(generalized advantage estimation), 그리고 rapid라는 RL 프레임워클르 사용했다. Policy는 policy network(이친구가 actor역할을 하는 듯)와 critic network로 이루어져 있다.   
-Agent들이 같은 policy parameter를 공유하고 있으나, 관찰은 독립적으로 진행한다. 참고로 agent별로 파라미터를 공유하지 않을 경우 sample efficiency가 감소하는 경향을 보였다.
+Agent들이 같은 policy parameter를 공유하고 있으나, 관찰은 독립적으로 진행한다. 참고로 agent별로 파라미터를 공유하지 않을 경우 sample efficiency가 감소하는 경향을 보였다.   
+
 ![algorithm](/img/hideandseek1.png)
 위 그림을 보면 object와 agent들의 position 그리고 시야각이 input으로 들어감을 알 수 있다. 또한 agent들의 상호작용이 환경을 변화시키는데(박스 위치를 옮기거나 lock을 거는 등), self-attention based policy architecture를 사용함을 알 수 있다. 앞에서 언급한 6가지의 strategy를 통해 얼마나 많은 각각의 object들이 lock되었나를 관찰하면, 환경이 변화함에 있어서 다루는 tool이 달라짐을 볼 수 있다. Appendix B를 보면 더 자세히 알 수 있는데, policy들이 에이전트 간 공유되고 있고, PPO의 특징인 clip과  TD(시간차 기법)을 활용한 GAE 알고리즘을 확인할 수 있다.   
 
