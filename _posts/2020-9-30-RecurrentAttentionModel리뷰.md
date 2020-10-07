@@ -19,7 +19,7 @@ tags: Human Activity recognition, rl, deep learning
 
 
 
-###[1] [Weakly Supervised Human Activity Recognition From Wearable Sensors by Recurrent Attention Learning](https://ieeexplore.ieee.org/document/8570822)
+### 1. [Weakly Supervised Human Activity Recognition From Wearable Sensors by Recurrent Attention Learning](https://ieeexplore.ieee.org/document/8570822)
 참고> labeled: 라벨링 된거, weakly-labeled: 라벨링은 안됐는데 데이터 특징으로 라벨 유추할 수 있는 거, unlabeled: 라벨링 안된거.
 
 센서로 HAR 연구를 하는 논문들이 많이 쓰는 UCI-HAR Dataset을 사용했다. 제목에 나와있는 것 처럼 recurrent model을 사용했다. (센서값이 time serial로 sequential data인 경우가 많다!) 뒤에서 나올 RAM과 DRAM 에 영감을 받은 이 논문은, coarse-grained label만 주어진 학습 데이터를 사용하는  부정확한 지도(inaccurate supervision)에 대해 얘기하고 있다. 즉, labeling이 정확하게 주어지지 않은 학습 데이터로 train을 한다. 일련의 센서 데이터를 시간에 따라 정확하게 labeling하기 힘든 점에 주목했다.
@@ -57,7 +57,8 @@ tags: Human Activity recognition, rl, deep learning
 ![result](http://hyona-yu.github.io/img/0930post7.jpg)
 
 
-###[2] [Recurrent Models of Visual Attention](https://papers.nips.cc/paper/5542-recurrent-models-of-visual-attention.pdf)  
+
+### 2. [Recurrent Models of Visual Attention](https://papers.nips.cc/paper/5542-recurrent-models-of-visual-attention.pdf)  
   이제 mother paper를 살펴보자. 2014년 deepmind에서 나온 논문. 큰 이미지에 대한 CNN의 연산량이 너무 많아지자 대안으로 나왔다. 다른 위치, scale에서의 cropped bounding box를 찾는 것의 연산은 결국 전체 이미지의 filter map에서 오기 때문이라고 논문은 기술하고 있다. 본래 object detection을 사람이 한다고 간주한다면 눈의 움직임이 바탕이 된다. 이에 착안하여 전체 이미지를 한 번에 처리하지 않고, 단계적으로 location을 찾는다. 특이점은 "greedy action select이 아닌 end-to-end optimization을 쓴다"는 것.결국 이것은 object detection, 즉 분류 문제이기 때문이다.
 
   ![model network](http://hyona-yu.github.io/img/0930post8.jpg)
