@@ -61,6 +61,8 @@ tags: Human Activity recognition, rl, deep learning
 ### 2. [Recurrent Models of Visual Attention](https://papers.nips.cc/paper/5542-recurrent-models-of-visual-attention.pdf)  
   이제 mother paper를 살펴보자. 2014년 deepmind에서 나온 논문. 큰 이미지에 대한 CNN의 연산량이 너무 많아지자 대안으로 나왔다. 다른 위치, scale에서의 cropped bounding box를 찾는 것의 연산은 결국 전체 이미지의 filter map에서 오기 때문이라고 논문은 기술하고 있다. 본래 object detection을 사람이 한다고 간주한다면 눈의 움직임이 바탕이 된다. 이에 착안하여 전체 이미지를 한 번에 처리하지 않고, 단계적으로 location을 찾는다. 특이점은 "greedy action select이 아닌 end-to-end optimization을 쓴다"는 것.결국 이것은 object detection, 즉 분류 문제이기 때문이다.
 
+
+  Model을 크게 보면 RNN구조임을 알 수 있다.
   ![model network](http://hyona-yu.github.io/img/0930post8.jpg)
 - x: raw image
 - l: location tuple. 이미지 중앙이 (0,0), 맨 밑 아래가 (-1,-1)이다.
@@ -84,8 +86,10 @@ objective function은 아래를 쓴다. reward가 커져야 하므로 J를 maxim
 ![result](http://hyona-yu.github.io/img/0930post11.jpg)
 ![result](http://hyona-yu.github.io/img/0930post12.jpg)
 
-추가적으로 dynamic visual environment에서도 해당 policy를 통해 성능을 낼 수 있음을 시사한다. (공튀기고 잡기 게임. http://www.cs.toronto.edu/~vmnih/docs/attention.mov.)
+추가적으로 dynamic visual environment에서도 해당 policy를 통해 성능을 낼 수 있음을 시사한다. (공튀기고 잡기 게임. http://www.cs.toronto.edu/~vmnih/docs/attention.mov.)  
+
 결론:
+
 1. RAM은 image size에 관계 없이 독자적으로 수행할 수 있다.
 2. 망막과 같이 센터와 주변을 살펴보므로 clutter(ex. noise)를 무시할 수 있다.
 
