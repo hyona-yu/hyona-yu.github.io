@@ -10,7 +10,8 @@ This is Hyona Yu(유효나), undergraduate student of Sejong Univ, Seoul, South 
 
 # Current
 - Undergraduate Research Member, MINESLAB, Seoul, South Korea. 2018-.
-
+- Major 3.99/4.5
+- Total 3.82/4.5
 # 2019
 - First Author of [Multicopter PID Attitude Controller Gain Auto-tuning through Reinforcement Learning Neural Networks](https://doi.org/10.1145/3387304.3387327)
 ICCRT 2019: Proceedings of the 2019 2nd International Conference on Control and Robot Technology, December 2019, pp 80–84
