@@ -9,7 +9,6 @@ This is Hyona Yu(유효나), undergraduate student of Sejong Univ, Seoul, South 
  If you want to contact me via email, gysk0507@gmail.com
 
 # Current
-- Undergraduate Research Member, MINESLAB, Seoul, South Korea. 2018-.
 - Major 3.99/4.5
 - Total 3.82/4.5
 
