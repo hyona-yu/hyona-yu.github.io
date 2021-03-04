@@ -12,7 +12,7 @@ This is Hyona Yu(유효나), undergraduate student of Sejong Univ, Seoul, South 
 - Major 3.99/4.5
 - Total 3.82/4.5
 
-#2021
+# 2021
 - Undergraduate Research Member, MINESLAB, Seoul, South Korea. 2018.3- 2021.2.
 - First Author of [Performance Evaluation of Training Methods for Human Activity Recognition], The Korean Institute of Communications and Information Sciences, Feb, 2021.
 # 2019
